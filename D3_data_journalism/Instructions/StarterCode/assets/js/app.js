@@ -120,7 +120,7 @@ function make_responsive()
 
   var tooltip = d3.tip()
      .attr("class","tooltip")
-     .offset([80,-60])
+     .offset([-8,0])
      .html(function(d){
        return (`${d.state}<br>
               Poverty: ${d.poverty}%<br>

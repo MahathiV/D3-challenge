@@ -2,9 +2,11 @@
 // Making Window Responsive
 
 function make_responsive()
+
 {
 
- // Svg area height and width
+// if the SVG area isn't empty when the browser loads,
+// remove it and replace it with a resized version of the chart
 
  var svgarea = d3.select("body").select("svg");
 
@@ -46,7 +48,9 @@ function make_responsive()
 
  // Import CSV data from "data.csv" file
 
-  d3.csv("assets/data/data.csv").then(function(data)
+ d3.csv("assets/data/data.csv").then(function(data)  // absolute path
+
+ // d3.csv("./data.csv").then(function(data) // relative path
   {
     //console.log(data)
 
@@ -120,7 +124,7 @@ function make_responsive()
 
   var tooltip = d3.tip()
      .attr("class","tooltip")
-     .offset([-8,0])
+     .offset([80,-60])
      .html(function(d){
        return (`${d.state}<br>
               Poverty: ${d.poverty}%<br>
